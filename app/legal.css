@@ -1,0 +1,391 @@
+/* Legal pages, LGPD forms and the cookie notice, in the same dark editorial palette. */
+.legalPage {
+  background: var(--night);
+  color: var(--text);
+  padding: calc(var(--nav-h) + 64px)
+    max(var(--gutter), calc((100vw - 1200px) / 2)) 96px;
+}
+.legalHero {
+  max-width: 820px;
+  margin-bottom: 60px;
+}
+.legalHero .eyebrow {
+  color: var(--ember);
+  background: transparent;
+  border-color: #ffffff25;
+}
+.legalHero h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 18px 0;
+}
+.legalHero p {
+  color: #c0c9ce;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.legalHero small {
+  display: block;
+  margin-top: 18px;
+  color: #8d9aa2;
+  font-size: 13px;
+}
+.legalLayout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+.legalNav {
+  position: sticky;
+  top: 110px;
+  display: grid;
+  gap: 4px;
+  border-left: 1px solid #ffffff21;
+}
+.legalNav a {
+  color: #a4b0b8;
+  padding: 9px 16px;
+  font-size: 14px;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+}
+.legalNav a:hover {
+  color: #fff;
+}
+.legalNav a[aria-current="page"] {
+  color: #fff;
+  border-color: var(--ember);
+}
+.legalBody {
+  max-width: 780px;
+  display: grid;
+  gap: 42px;
+}
+.legalBody h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #fff;
+}
+.legalBody p,
+.legalBody li {
+  color: #c7d0d5;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.legalBody p + p {
+  margin-top: 12px;
+}
+.legalBody ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+  list-style: disc;
+  margin: 12px 0;
+}
+.legalBody b {
+  color: #f3f1ea;
+}
+.legalBody a {
+  color: var(--ember);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legalBody code {
+  font-size: 13px;
+  color: #f3f1ea;
+}
+.legalTable {
+  overflow-x: auto;
+  border: 1px solid #ffffff21;
+  border-radius: 4px;
+}
+.legalTable table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+.legalTable th,
+.legalTable td {
+  text-align: left;
+  padding: 13px 15px;
+  border-bottom: 1px solid #ffffff14;
+  font-size: 14px;
+  line-height: 1.5;
+  vertical-align: top;
+  color: #c7d0d5;
+}
+.legalTable th {
+  color: #fff;
+  background: #ffffff08;
+  font-weight: 700;
+}
+.legalForm {
+  display: grid;
+  gap: 18px;
+  max-width: 620px;
+}
+.legalForm label {
+  display: grid;
+  gap: 8px;
+  color: #e5e8e9;
+  font-size: 15px;
+  font-weight: 600;
+}
+.legalForm input:not([type="checkbox"]),
+.legalForm select,
+.legalForm textarea {
+  background: #111c23;
+  color: #f3f1ea;
+  border: 1px solid #3a4851;
+  border-radius: 6px;
+  padding: 13px 14px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+}
+.legalForm textarea {
+  resize: vertical;
+}
+.legalForm input:focus,
+.legalForm select:focus,
+.legalForm textarea:focus {
+  border-color: var(--ember);
+  outline: none;
+  box-shadow: 0 0 0 4px #f1846514;
+}
+.legalCheck {
+  display: flex !important;
+  gap: 12px;
+  align-items: flex-start;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 1.55;
+  color: #c7d0d5;
+}
+.legalCheck input {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-top: 2px;
+  accent-color: var(--ember);
+  padding: 0;
+}
+.legalCheck a {
+  color: var(--ember);
+  text-decoration: underline;
+}
+.legalSuccess {
+  border: 1px solid #f1846566;
+  background: #f184650f;
+  padding: 22px;
+  border-radius: 6px;
+}
+.legalSuccess p {
+  margin-top: 8px;
+}
+.legalWarning {
+  color: #ffb4a0 !important;
+}
+
+/* Cookie consent: a quiet card at the base of the screen; preferences expand in place. */
+.consentBanner {
+  position: fixed;
+  left: clamp(12px, 2vw, 24px);
+  bottom: clamp(12px, 2vw, 24px);
+  z-index: 160;
+  width: min(560px, calc(100vw - 24px));
+  display: grid;
+  gap: 18px;
+  background: #10191ff7;
+  color: #e3e7e9;
+  border: 1px solid #ffffff1f;
+  border-radius: 14px;
+  padding: clamp(18px, 2.4vw, 24px);
+  box-shadow: 0 18px 50px #0006;
+  backdrop-filter: blur(16px);
+  animation: consentIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+@keyframes consentIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+.consentCopy h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.consentCopy p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #c9d2d7;
+}
+.consentCopy a {
+  color: var(--ember);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.consentOptions {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid #ffffff14;
+}
+.consentOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff14;
+  cursor: pointer;
+}
+.consentOption span {
+  display: grid;
+  gap: 3px;
+}
+.consentOption b {
+  font-size: 14px;
+  color: #fff;
+}
+.consentOption small {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #b4bec4;
+}
+.consentSwitch {
+  appearance: none;
+  flex: none;
+  width: 40px;
+  height: 22px;
+  border-radius: 22px;
+  background: #ffffff26;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+}
+.consentSwitch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.consentSwitch:checked {
+  background: var(--ember);
+}
+.consentSwitch:checked::after {
+  transform: translateX(18px);
+  background: var(--on-ember);
+}
+.consentSwitch:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.consentActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.consentButton {
+  border: 1px solid #ffffff33;
+  background: transparent;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.consentButton:hover {
+  border-color: #ffffff80;
+  transform: translateY(-1px);
+}
+.consentButton:active {
+  transform: scale(0.97);
+}
+.consentButton.primary {
+  background: var(--ember);
+  border-color: var(--ember);
+  color: var(--on-ember);
+}
+.consentButton.ghost {
+  border-color: transparent;
+  margin-right: auto;
+  padding-inline: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.consentBanner :focus-visible {
+  outline: 2px solid var(--focus-dark);
+  outline-offset: 3px;
+}
+.footerConsent,
+.legalInlineButton {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.legalInlineButton {
+  color: var(--ember);
+}
+
+@media (max-width: 900px) {
+  .legalLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .legalNav {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 0;
+    gap: 8px;
+  }
+  .legalNav a {
+    border: 1px solid #ffffff21;
+    border-radius: 30px;
+    padding: 8px 14px;
+    margin: 0;
+    font-size: 13px;
+  }
+  .legalNav a[aria-current="page"] {
+    border-color: var(--ember);
+  }
+}
+@media (max-width: 600px) {
+  .consentActions {
+    justify-content: stretch;
+  }
+  .consentActions .consentButton {
+    flex: 1 1 auto;
+  }
+  .consentButton.ghost {
+    flex-basis: 100%;
+    text-align: left;
+  }
+  .legalBody p,
+  .legalBody li {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,588 @@
+/* Painel das instituições e redes de ensino. */
+.adminFrame {
+  display: grid;
+  grid-template-columns: 272px minmax(0, 1fr);
+  min-height: 100dvh;
+  background: var(--night-deep);
+}
+
+.adminFrame:has(.adminSolo) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+}
+
+.adminSide {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100dvh;
+  padding: 20px 14px;
+  overflow-y: auto;
+  border-right: 1px solid var(--line);
+  background: var(--night);
+}
+
+.adminSide .brand {
+  padding: 4px 8px 8px;
+}
+
+.instSwitch {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.instSwitch span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.instSwitch select {
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.adminSideFoot {
+  display: grid;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.adminSideFoot a,
+.adminSideFoot button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: left;
+}
+
+.adminSideFoot a:hover,
+.adminSideFoot button:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.adminMain {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.adminTop {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 76px;
+  padding: 12px clamp(16px, 3vw, 36px);
+  border-bottom: 1px solid var(--line);
+  background: #10191feb;
+  backdrop-filter: blur(16px);
+}
+
+.adminTop.simple {
+  justify-content: space-between;
+}
+
+.adminTag {
+  margin-right: auto;
+  color: var(--text-soft);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.adminTitle {
+  flex: 1;
+  min-width: 0;
+}
+
+.adminTitle small {
+  display: block;
+  overflow: hidden;
+  color: var(--text-soft);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adminTitle h1 {
+  font: 600 30px/1.05 var(--display);
+  text-transform: uppercase;
+}
+
+.adminMenu {
+  display: none;
+}
+
+.adminContent {
+  padding: clamp(18px, 3vw, 36px);
+  animation: pageIn 0.3s var(--ease) backwards;
+}
+
+.adminSolo {
+  width: min(900px, 100% - 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.adminPitch {
+  display: grid;
+  gap: 18px;
+}
+
+.adminPitch > p {
+  max-width: 680px;
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+.pitchList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.pitchList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.pitchList .icon {
+  color: var(--ember-strong);
+}
+
+.adminStack {
+  display: grid;
+  gap: 20px;
+}
+
+.adminGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.adminGrid .span2 {
+  grid-column: 1 / -1;
+}
+
+.panel {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.panel.flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.panel h2 {
+  font-size: 18px;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.kpi {
+  display: grid;
+  gap: 6px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  text-align: left;
+}
+
+button.kpi {
+  transition: border-color var(--dur) var(--ease);
+}
+
+button.kpi:hover {
+  border-color: var(--ember);
+}
+
+.kpi > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.kpi > span .icon {
+  color: var(--ember-strong);
+}
+
+.kpi b {
+  font: 600 44px/1 var(--display);
+}
+
+.kpi small {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.funnel {
+  display: grid;
+  gap: 12px;
+}
+
+.funnel li {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.funnel b {
+  text-align: right;
+}
+
+.funnelBar {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--surface-3);
+}
+
+.funnelBar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--ember), var(--ember-strong));
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar .searchField {
+  flex: 1 1 280px;
+}
+
+.toolbar > select {
+  flex: 1 1 240px;
+}
+
+.statusTabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.statusTabs button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.statusTabs button[aria-pressed="true"] {
+  border-color: var(--ember);
+  color: var(--text);
+}
+
+.statusTabs small {
+  color: var(--text-soft);
+}
+
+.applicationDetail {
+  display: grid;
+  gap: 18px;
+}
+
+.applicationDetail h3 {
+  font-size: 16px;
+}
+
+.quote {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--ember);
+  border-radius: var(--radius-sm);
+  background: var(--night-deep);
+  color: var(--text-muted);
+  white-space: pre-line;
+}
+
+.statusPicker {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.statusPicker legend {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.peopleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.person {
+  gap: 10px;
+}
+
+.person header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.person header > div {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.person header small {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.person a,
+.person p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-wrap: anywhere;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.person a:hover {
+  color: var(--ember-strong);
+}
+
+.memberList {
+  display: grid;
+}
+
+.memberList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.memberList li:last-child {
+  border-bottom: 0;
+}
+
+.memberList li > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.memberList small {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.memberList select {
+  width: auto;
+  min-height: 38px;
+  font-size: 14px;
+}
+
+.timeline {
+  display: grid;
+}
+
+.timeline li {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline li > div {
+  display: grid;
+}
+
+.timeline time {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.timelineIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--ember-strong);
+}
+
+.requestList {
+  display: grid;
+  gap: 14px;
+}
+
+.requestList header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.requestList header > div {
+  display: grid;
+}
+
+.requestList header small {
+  color: var(--text-soft);
+}
+
+.requestList p {
+  color: var(--text-muted);
+  white-space: pre-line;
+}
+
+.setupNotice {
+  display: flex;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1px solid #f3c86f59;
+  border-radius: var(--radius);
+  background: #f3c86f12;
+  color: var(--text);
+}
+
+.setupNotice > .icon {
+  color: var(--warning);
+}
+
+.setupNotice code {
+  color: var(--warning);
+}
+
+.photoPanel {
+  grid-template-columns: 280px minmax(0, 1fr);
+  align-items: center;
+  gap: 22px;
+}
+
+.photoPreview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.photoPanel > div {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.enrollBox {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--night-deep);
+}
+
+@media (max-width: 1000px) {
+  .adminFrame {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adminSide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: min(300px, 86vw);
+    transform: translateX(-102%);
+    transition: transform 0.3s var(--ease);
+  }
+
+  .adminSide.isOpen {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+
+  .adminMenu {
+    display: inline-grid;
+  }
+
+  .adminGrid,
+  .photoPanel,
+  .pitchList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .adminTop .badge,
+  .adminTop > .avatar {
+    display: none;
+  }
+
+  .adminTitle h1 {
+    font-size: 24px;
+  }
+
+  .funnel li {
+    grid-template-columns: 90px minmax(0, 1fr) 32px;
+  }
+}

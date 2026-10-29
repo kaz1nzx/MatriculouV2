@@ -1,0 +1,1665 @@
+:root {
+  --night: #172229;
+  --night-deep: #10191f;
+  --warm-white: #f3f1ea;
+  --ember: #f18465;
+  --display: "Barlow Condensed", Impact, sans-serif;
+}
+html {
+  scroll-padding-top: 96px;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 5px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.pageTransition {
+  animation: cinemaPageIn 0.35s ease-out both;
+  overflow: clip;
+}
+.cinemaReadingTrack {
+  height: 2px;
+}
+.cinemaReadingTrack > div {
+  background: var(--ember);
+}
+.cinemaMotionControl {
+  background: #172229e8;
+  color: #e0e4e5;
+  border-color: #ffffff26;
+  box-shadow: none;
+  padding: 11px 14px;
+}
+/* One transparent navigation layer over the opening photograph. */
+/* Photography, narrow typography, copper accents, and generous negative space. */
+.cinematicHome {
+  --bg: var(--night);
+  --paper: #f3f1ea;
+  --ink: #f3f1ea;
+  --muted: #a3afb6;
+  --line: #ffffff21;
+  --green: #e2e8e9;
+  --green2: #f18465;
+  --mint: #202e36;
+  --gold: #f18465;
+  --coral: #f18465;
+  color: var(--ink);
+}
+.filmContainer,
+.filmStatement {
+  width: calc(100% - 160px);
+  max-width: 1200px;
+}
+.filmHero {
+  height: auto;
+  min-height: max(900px, 100svh);
+  max-height: none;
+  padding-bottom: 36px;
+  overflow: clip;
+  background: var(--night);
+  scroll-margin-top: 0;
+}
+.filmHeroInner {
+  width: calc(100% - 160px);
+  max-width: 1200px;
+  height: auto;
+  min-height: calc(100svh - 36px);
+  padding-top: 121px;
+}
+.filmImages {
+  inset: 0;
+}
+.filmFrame {
+  filter: none;
+  transform: scale(1.04);
+  transition:
+    opacity 1.1s ease,
+    transform 8s ease;
+}
+.filmFrame img {
+  filter: saturate(0.55);
+}
+.filmShade {
+  background: linear-gradient(90deg, #101920d4 0%, #10192071 45%, #10192022 80%),
+    linear-gradient(
+      0deg,
+      #172229 1%,
+      #172229e8 13%,
+      #1722294d 45%,
+      #17222940 78%,
+      #17222960
+    );
+}
+.filmGrain {
+  opacity: 0.04;
+}
+.filmViewfinder,
+.filmHeroEditorial,
+.filmUnderline,
+.filmLightLeak {
+  display: none;
+}
+.filmHeroTop {
+  position: relative;
+  z-index: 4;
+  flex-shrink: 0;
+  color: #d8dfe2b5;
+  font-size: 12px;
+  letter-spacing: 1.9px;
+}
+.filmHeroTop i {
+  background: var(--ember);
+}
+.filmHeroMain {
+  padding-block: 24px;
+  min-height: 575px;
+}
+.filmHeroCopy {
+  max-width: 750px;
+}
+.filmEyebrow {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d1d7da;
+}
+.cinematicHome .filmTitle {
+  font-family: var(--display);
+  font-size: clamp(88px, 8.7vw, 132px);
+  line-height: 0.91;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  margin: 26px 0 24px;
+}
+.filmTitleMask,
+.filmTitleAccent {
+  padding: 0 6px 9px 0;
+  margin-bottom: -9px;
+  color: #f3f1ea;
+}
+.filmTitleMask:last-child {
+  color: #ffffff72;
+}
+.filmDescription {
+  max-width: 356px;
+  font-size: 14px;
+  color: #c0c9ce;
+  line-height: 1.8 !important;
+}
+.filmHeroActions {
+  margin-top: 24px;
+  gap: 25px;
+}
+.filmHeroActions .filmPrimary {
+  background: var(--ember);
+  color: #182229;
+  border-radius: 2px;
+  min-height: 45px;
+  padding: 13px 18px;
+  font-size: 13px;
+}
+.filmSecondary {
+  color: #e2e5e6;
+  font-size: 13px;
+}
+.filmSceneRail {
+  position: absolute;
+  right: 0;
+  top: 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.filmSceneRail button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 17px;
+  border: 0;
+  background: none;
+  color: #ffffff55;
+  padding: 7px 0 7px 20px;
+  font-family: var(--display);
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.filmSceneRail button i {
+  width: 20px;
+  height: 1px;
+  background: #ffffff25;
+  transition:
+    width 0.35s,
+    background 0.35s;
+}
+.filmSceneRail button[aria-pressed="true"] {
+  color: #fff;
+  font-size: 30px;
+}
+.filmSceneRail button[aria-pressed="true"] i {
+  width: 58px;
+  background: var(--ember);
+}
+.filmHeroDestinations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 38px;
+  padding-block: 15px 22px;
+}
+.filmHeroDestinations a {
+  padding: 15px 0;
+  border-top: 1px solid #ffffff30;
+  position: relative;
+}
+.filmHeroDestinations a::before {
+  position: absolute;
+  content: "";
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ember);
+  transition: width 0.4s;
+}
+.filmHeroDestinations a:hover::before {
+  width: 100%;
+}
+.filmHeroDestinations a > span {
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  color: #8f9ba2;
+}
+.filmHeroDestinations p {
+  font-size: 14px;
+  color: #d1d8db;
+  line-height: 1.6;
+  margin: 12px 0 16px;
+}
+.filmHeroDestinations b {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.filmHeroDestinations b svg {
+  color: var(--ember);
+}
+.filmHeroBottom {
+  min-height: 65px;
+}
+.filmHeroFooter {
+  height: 36px;
+  background: none;
+  padding-inline: max(80px, calc((100% - 1200px) / 2));
+  font-size: 12px;
+  color: #819098;
+}
+.filmArrow,
+.filmPause {
+  width: 32px;
+  height: 32px;
+}
+.filmSceneCount > b {
+  color: #f1f1ec;
+}
+.filmSceneDots button > span {
+  background: var(--ember);
+}
+.filmChapterNav a.isActive i {
+  background: var(--ember);
+}
+.filmSectionLabel {
+  color: var(--green);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+}
+.filmSectionLabel > i {
+  background: var(--ember);
+  border-radius: 0;
+  width: 5px;
+  height: 5px;
+}
+.cinematicHome .filmSectionHeading h2,
+.cinematicHome .atlasIntro h2,
+.cinematicHome .scrollStoryHeading h2,
+.cinematicHome .filmFinale h2,
+.cinematicHome .cinemaPortalCopy h2 {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: clamp(44px, 4.6vw, 66px);
+  line-height: 0.99;
+  letter-spacing: 0;
+}
+.filmSectionHeading h2 em,
+.scrollStoryHeading h2 em {
+  color: #a5b0b7;
+}
+.filmStatement {
+  padding-block: 52px 57px;
+}
+.filmStatementBody {
+  padding: 35px 90px 0;
+}
+.filmStatementBody h2 {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.filmStatementBody p {
+  font-size: 13px;
+  margin-top: 20px;
+}
+.filmStatementOrbit {
+  top: 38px;
+}
+.filmDiscovery {
+  padding-block: 80px 60px;
+}
+.filmDiscoveryTopline {
+  margin-top: 33px;
+}
+.filmGalleryControls button {
+  background: transparent;
+  color: var(--warm-white);
+  border-color: var(--line);
+  width: 36px;
+  height: 36px;
+}
+.filmGalleryControls button:not(:disabled):hover {
+  background: #ffffff15;
+}
+.filmInstitutionGallery {
+  gap: 20px;
+}
+.filmGalleryItem,
+.filmSkeleton {
+  flex-basis: calc((100% - 60px) / 4);
+}
+.demoCaption {
+  color: #a3afb6;
+  font-size: 13px;
+  margin: -9px 0 22px;
+}
+.filmEmpty {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.filmMarquee {
+  background: #131e25;
+  padding-block: 25px;
+}
+.filmMarqueeTrack {
+  font-family: var(--display);
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #7d8c95;
+}
+.filmMarqueeTrack em {
+  color: #e4e8e9;
+}
+.filmCourseFeature {
+  border-radius: 2px;
+}
+.filmCourseFeatureShade {
+  background: linear-gradient(0deg, #101920ed 0%, #10192080 42%, #10192012);
+}
+.filmCourseFeature h3 {
+  color: #fff;
+}
+.filmFeatureTag {
+  border-radius: 2px;
+}
+.filmCourseRow:hover {
+  background: #ffffff05;
+}
+.filmCourseArrow {
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+}
+.filmCourseRow:hover .filmCourseArrow {
+  background: var(--ember);
+  color: #172229;
+}
+.filmTextLink {
+  color: var(--ink);
+}
+.filmTextLink > svg {
+  color: var(--ember);
+}
+.filmCourses {
+  padding-block: 75px 95px;
+}
+.filmCourseFeature {
+  min-height: 550px;
+}
+.scrollStory {
+  color: var(--ink);
+}
+.scrollStoryVisual,
+.scrollStoryViewfinder {
+  border-radius: 2px;
+}
+.scrollStoryShade {
+  background: linear-gradient(0deg, #101920f5, transparent 80%);
+}
+.scrollStoryVisualWord {
+  color: #f3f1ea;
+}
+.scrollStoryChapter h3 {
+  color: var(--ink);
+}
+.filmJourney {
+  background: #121d24;
+  border-block: 1px solid #ffffff15;
+}
+.filmJourneyImage {
+  border-radius: 3px;
+}
+.filmJourneyArtTag {
+  background: var(--ember);
+  color: #172229;
+  border-radius: 2px;
+}
+.filmJourneyCaption {
+  background: #233039e0;
+  border-color: #ffffff30;
+  border-radius: 2px;
+}
+.filmJourneyCopy .button {
+  background: var(--ember);
+  color: #172229;
+  border-radius: 2px;
+}
+.cinemaPortalShade {
+  background: linear-gradient(0deg, #172229, #17222933 80%),
+    linear-gradient(90deg, #172229c9, transparent);
+}
+.cinemaPortalCopy {
+  color: #fff;
+}
+.cinemaPortalCopy h2 em {
+  color: var(--ember);
+}
+.filmFinale {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin-block: 70px 50px;
+  padding-top: 50px;
+}
+.filmFinale > .button {
+  background: var(--ember);
+  color: #172229;
+  border-radius: 2px;
+}
+.filmFinale h2 em {
+  color: var(--ember);
+}
+.filmFinaleOrbit {
+  opacity: 0.24;
+}
+/* A manipulable CSS 3D sphere: no WebGL or large renderer to download. */
+.atlasSection {
+  padding-block: 75px 90px;
+  border-block: 1px solid #ffffff21;
+}
+.atlasIntro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  column-gap: 80px;
+}
+.atlasIntro .filmSectionLabel {
+  grid-column: 1 / -1;
+}
+.atlasIntro h2 {
+  margin: 23px 0 0;
+}
+.atlasIntro h2 em {
+  font-style: normal;
+  color: #a5b0b7;
+}
+.atlasIntro > p {
+  font-size: 13px;
+  color: #a3afb6;
+  padding-bottom: 5px;
+}
+.atlasExperience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 36px;
+  align-items: center;
+}
+.atlasViewport {
+  position: relative;
+  min-width: 0;
+  height: 420px;
+  perspective: 950px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  background: radial-gradient(ellipse at center, #b15c3220, transparent 66%);
+}
+.atlasViewport:active {
+  cursor: grabbing;
+}
+.atlasCoordinates {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #8b9ba4;
+}
+.atlasScrollLayer {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  left: 50%;
+  top: 50%;
+  margin: -145px 0 0 -145px;
+  transform-style: preserve-3d;
+}
+.atlasSphere {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-16deg) rotateY(var(--globe-rotation));
+}
+.atlasAutoRotate {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: atlasTurn 45s linear infinite;
+}
+.atlasViewport:active .atlasAutoRotate,
+.atlasViewport:focus .atlasAutoRotate,
+.atlasViewport:hover .atlasAutoRotate {
+  animation-play-state: paused;
+}
+.atlasMeridian,
+.atlasLatitude {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid #f184654d;
+  backface-visibility: visible;
+}
+.atlasLatitude {
+  border-color: #f5c4ab42;
+}
+.atlasCore {
+  position: absolute;
+  inset: 42%;
+  border-radius: 50%;
+  background: #f7a888;
+  box-shadow: 0 0 65px 35px #f1846530;
+  opacity: 0.5;
+}
+.atlasSatellite {
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: #fff1df;
+  border-radius: 50%;
+  box-shadow: 0 0 22px var(--ember);
+}
+.atlasEquator {
+  position: absolute;
+  inset: -32px;
+  border: 1px solid #e3d0c159;
+  border-radius: 50%;
+  transform: rotateX(70deg) rotateY(-22deg);
+  pointer-events: none;
+}
+.atlasDragHint {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #a3afb6;
+  font-size: 13px;
+}
+@keyframes atlasTurn {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+.atlasTabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid #ffffff21;
+}
+.atlasTabs button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 0;
+  padding: 17px;
+  background: #ffffff03;
+  color: #b1bdc4;
+  font-size: 13px;
+  text-align: left;
+}
+.atlasTabs button span {
+  font-size: 12px;
+  color: #83919a;
+}
+.atlasTabs button[aria-pressed="true"] {
+  background: #f1846517;
+  color: #fff;
+  box-shadow: inset 2px 0 var(--ember);
+}
+.atlasTabs button[aria-pressed="true"] span {
+  color: var(--ember);
+}
+.atlasDetail {
+  min-height: 245px;
+  padding-top: 30px;
+  animation: cinemaCaptionIn 0.4s both;
+}
+.atlasNumber {
+  font-size: 12px;
+  color: var(--ember);
+  letter-spacing: 1px;
+}
+.atlasDetail h3 {
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.2;
+  max-width: 360px;
+  letter-spacing: -0.025em;
+  margin: 17px 0 13px;
+}
+.atlasDetail p {
+  color: #a3afb6;
+  font-size: 14px;
+  max-width: 370px;
+}
+/* Internal pages share the same photographic header and precise detailing. */
+.pageHero.routeCinemaHero {
+  background: var(--night);
+  padding-top: 126px;
+  border-radius: 0;
+}
+.routeCinemaHero .routeCinemaCopy h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(48px, 5.2vw, 72px);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: #f3f1ea;
+}
+.routeCinemaVisual {
+  border-radius: 2px;
+}
+.routeCinemaPicture > span {
+  background: linear-gradient(0deg, #172229, transparent 75%);
+}
+.routeCinemaCaption {
+  color: var(--ember);
+}
+.routeCinemaCopy .eyebrow {
+  background: transparent;
+  color: #c7d0d5;
+  border-color: #ffffff25;
+}
+.nextChapter .button {
+  background: var(--night);
+  border-radius: 3px;
+}
+.catalog .button {
+  border-radius: 5px;
+}
+/* Mia: a persistent, keyboard accessible conversation with real catalog links. */
+.miaChat {
+  position: fixed;
+  bottom: 20px;
+  right: 22px;
+  z-index: 130;
+  font-family: "DM Sans", sans-serif;
+}
+.miaBackdrop {
+  position: fixed;
+  inset: 0;
+  background: #070e1333;
+  z-index: -1;
+}
+.miaLauncher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 14px 19px;
+  min-height: 48px;
+  background: #f18465;
+  color: #172229;
+  border: 1px solid #f7af99;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 6px 35px #0003;
+  margin-left: auto;
+  transition:
+    transform 0.25s,
+    background 0.25s;
+}
+.miaLauncher:hover {
+  transform: translateY(-3px);
+  background: #f6a38a;
+}
+.miaLauncher > i {
+  width: 5px;
+  height: 5px;
+  background: #172229;
+  border-radius: 50%;
+}
+.miaPanel {
+  width: 390px;
+  height: min(630px, calc(100dvh - 105px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #3c4952;
+  background: #18242c;
+  color: #f1f0ec;
+  box-shadow: 0 25px 90px #0006;
+  animation: miaOpen 0.25s ease-out;
+}
+@keyframes miaOpen {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.miaHeader {
+  padding: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #1e2d36;
+  border-bottom: 1px solid #ffffff12;
+}
+.miaAvatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #f1846566;
+  color: var(--ember);
+  border-radius: 50%;
+  background: radial-gradient(circle, #f184651c, transparent);
+}
+.miaHeader h2 {
+  font:
+    700 19px "Space Grotesk",
+    sans-serif;
+  margin: 0 0 5px;
+  color: #fff;
+}
+.miaHeader h2 span {
+  font:
+    400 11px "DM Sans",
+    sans-serif;
+  color: #a5b4be;
+}
+.miaHeader p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #aebec8;
+  margin: 0;
+}
+.miaHeader p i {
+  width: 4px;
+  height: 4px;
+  background: #a8d4b0;
+  border-radius: 50%;
+}
+.miaHeader > button {
+  margin-left: auto;
+  border: 0;
+  color: #b6c3cb;
+  background: transparent;
+  font-size: 25px;
+  width: 32px;
+  height: 32px;
+}
+.miaToolbar {
+  display: flex;
+  align-items: center;
+  padding: 9px 18px;
+  border-bottom: 1px solid #ffffff0d;
+  gap: 8px;
+}
+.miaToolbar > span {
+  margin-right: auto;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #96a9b5;
+}
+.miaToolbar button {
+  border: 1px solid #ffffff18;
+  background: transparent;
+  color: #b5c2cb;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+}
+.miaMessages {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex: 1;
+  min-height: 100px;
+  padding: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #4a5f6b transparent;
+}
+.miaMessage {
+  max-width: 93%;
+  margin-bottom: 18px;
+}
+.miaMessage > span {
+  display: block;
+  color: #9cafba;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  margin-bottom: 7px;
+}
+.miaMessage p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #d8e0e5;
+  overflow-wrap: anywhere;
+}
+.miaMessage.user {
+  margin-left: auto;
+  padding: 11px 14px;
+  border-radius: 8px 8px 0 8px;
+  background: #f1846519;
+  border: 1px solid #f1846529;
+}
+.miaMessage.user > span {
+  color: #f4ad95;
+}
+.miaMessage a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid #f1846540;
+  border-radius: 4px;
+  color: #ffb69d;
+  font-size: 13px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.miaMessage a:hover {
+  background: #f1846515;
+}
+.miaTyping {
+  display: flex;
+  gap: 5px;
+  padding: 8px 0;
+}
+.miaTyping i {
+  width: 5px;
+  height: 5px;
+  background: #f18465;
+  border-radius: 50%;
+  animation: miaDot 1s infinite alternate;
+}
+.miaTyping i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.miaTyping i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes miaDot {
+  to {
+    opacity: 0.25;
+    transform: translateY(-3px);
+  }
+}
+.miaSuggestions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 0 16px 14px;
+}
+.miaSuggestions button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  background: #ffffff03;
+  color: #b7c6d0;
+  border: 1px solid #ffffff1c;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font-size: 12px;
+  text-align: left;
+}
+.miaSuggestions button:hover {
+  border-color: #f1846580;
+  color: #f3f1ea;
+}
+.miaSuggestions button:disabled {
+  opacity: 0.4;
+  cursor: wait;
+}
+.miaSuggestions button > span {
+  color: #f18465;
+}
+.miaForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 16px;
+  padding: 7px 7px 7px 12px;
+  border: 1px solid #647782;
+  background: #111d25;
+  border-radius: 6px;
+}
+.miaForm:focus-within {
+  border-color: #f18465;
+}
+.miaForm input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 7px 0;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+}
+.miaForm input::placeholder {
+  color: #91a6b4;
+}
+.miaForm button {
+  display: grid;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  flex-shrink: 0;
+  background: #f18465;
+  border: 0;
+  color: #172229;
+  border-radius: 3px;
+}
+.miaForm button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.miaDisclaimer {
+  margin: 11px 0 13px;
+  text-align: center;
+  color: #95a6b1;
+  font-size: 12px;
+}
+/* A lost route becomes a new point of departure. */
+.missingPage {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  background: var(--night);
+  color: #f3f1ea;
+  overflow: clip;
+  padding: 130px 25px 100px;
+}
+.missingBackground {
+  object-fit: cover;
+  filter: saturate(0.2);
+  opacity: 0.12;
+  z-index: -2;
+}
+.missingPage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, #172229, transparent);
+}
+.missingContent {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
+.missingContent > .filmSectionLabel {
+  color: #bdc6cd;
+}
+@keyframes missingOrbit {
+  to {
+    transform: rotateY(420deg) rotateZ(180deg);
+  }
+}
+.missingContent h1 {
+  font: 600 clamp(44px, 5vw, 64px) / 0.99 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 22px 0;
+}
+.missingContent h1 em {
+  font-style: normal;
+  color: #9faeb7;
+}
+.missingContent > p {
+  color: #b0bec8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.missingActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin: 28px 0;
+}
+.missingActions .button {
+  border-radius: 2px;
+  font-size: 14px;
+  background: var(--ember);
+  color: #172229;
+  gap: 20px;
+}
+.missingActions .filmTextLink {
+  color: #f3f1ea;
+  font-size: 13px;
+}
+.missingSearch {
+  max-width: 415px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #ffffff35;
+  margin: 35px auto 0;
+  color: #a9bac5;
+}
+.missingSearch input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: #f3f1ea;
+  font-size: 13px;
+  padding: 8px 0;
+}
+.missingSearch input::placeholder {
+  color: #a9bac5;
+}
+.missingSearch button {
+  border: 0;
+  background: none;
+  color: var(--ember);
+  padding: 5px;
+}
+@media (max-width: 1150px) {
+  .filmContainer,
+  .filmStatement,
+  .filmHeroInner {
+    width: calc(100% - 100px);
+  }
+  .filmGalleryItem,
+  .filmSkeleton {
+    flex-basis: calc((100% - 40px) / 3);
+  }
+  .filmHeroFooter {
+    padding-inline: 50px;
+  }
+  .atlasExperience {
+    gap: 40px;
+  }
+}
+@media (max-width: 900px) {
+  .filmHero {
+    min-height: 950px;
+    height: auto;
+    max-height: none;
+  }
+  .filmHeroInner {
+    padding-top: 122px;
+  }
+  .cinematicHome .filmTitle {
+    font-size: clamp(76px, 11vw, 100px);
+  }
+  .filmHeroCopy {
+    max-width: 620px;
+  }
+  .filmSceneRail {
+    right: -18px;
+  }
+  .filmSceneRail button i {
+    width: 12px;
+  }
+  .filmSceneRail button[aria-pressed="true"] i {
+    width: 27px;
+  }
+  .filmHeroDestinations {
+    gap: 22px;
+  }
+  .filmHeroDestinations a > span {
+    font-size: 12px;
+    letter-spacing: 0.9px;
+  }
+  .filmHeroDestinations b {
+    font-size: 12px;
+  }
+  .filmStatementBody {
+    padding-inline: 35px;
+  }
+  .filmStatementBody h2 {
+    font-size: 29px;
+  }
+  .filmStatementOrbit {
+    left: -5px;
+    width: 30px;
+  }
+  .atlasIntro,
+  .atlasExperience {
+    gap: 30px;
+  }
+  .atlasSphere {
+    transform: rotateX(-16deg) rotateY(var(--globe-rotation)) scale(0.85);
+  }
+  .atlasEquator {
+    inset: -10px;
+  }
+  .atlasTabs button {
+    padding: 12px;
+    font-size: 13px;
+    gap: 8px;
+  }
+  .atlasDetail h3 {
+    font-size: 24px;
+  }
+  .filmGalleryItem,
+  .filmSkeleton {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+}
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+  .filmContainer,
+  .filmStatement,
+  .filmHeroInner {
+    width: calc(100% - 44px);
+  }
+  .filmHero {
+    min-height: 835px;
+    height: auto;
+    max-height: none;
+    padding-bottom: 0;
+  }
+  .filmHeroInner {
+    padding-top: 106px;
+    height: auto;
+    min-height: 0;
+    padding-bottom: 42px;
+  }
+  .filmHeroTop {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+  .filmHeroMain {
+    min-height: 530px;
+    padding-block: 36px 25px;
+    align-items: center;
+  }
+  .filmHeroCopy {
+    width: 100%;
+  }
+  .filmEyebrow {
+    font-size: 12px;
+    letter-spacing: 0.9px;
+  }
+  .cinematicHome .filmTitle {
+    font-size: clamp(64px, 14.5vw, 89px);
+    line-height: 0.94;
+    margin: 26px 0 24px;
+    letter-spacing: -0.015em;
+  }
+  .filmDescription {
+    font-size: 13px;
+    max-width: 290px;
+  }
+  .filmHeroActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+  }
+  .filmHeroActions .filmPrimary {
+    font-size: 13px;
+    padding: 12px 14px;
+    min-height: 42px;
+  }
+  .filmSecondary {
+    font-size: 12px;
+    gap: 7px;
+  }
+  .filmSceneRail {
+    display: none;
+  }
+  .filmShade {
+    background: linear-gradient(90deg, #101920c7, #10192066),
+      linear-gradient(0deg, #172229 5%, #172229dd 17%, #17222915 85%);
+  }
+  .filmHeroDestinations {
+    gap: 14px;
+    padding-block: 0 14px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .filmHeroDestinations a:last-child {
+    display: none;
+  }
+  .filmHeroDestinations a > span {
+    font-size: 12px;
+    letter-spacing: 0.7px;
+  }
+  .filmHeroDestinations p {
+    font-size: 13px;
+    margin: 12px 0;
+  }
+  .filmHeroDestinations b {
+    font-size: 12px;
+    gap: 8px;
+  }
+  .filmHeroDestinations b svg {
+    width: 12px;
+  }
+  .filmHeroBottom {
+    min-height: 72px;
+    gap: 12px;
+  }
+  .filmHeroFooter {
+    height: 36px;
+    padding-inline: 22px;
+    font-size: 12px;
+  }
+  .filmControls {
+    gap: 5px;
+  }
+  .filmArrow,
+  .filmPause {
+    width: 27px;
+    height: 27px;
+  }
+  .filmSceneDots button {
+    width: 10px;
+  }
+  .filmScrollCue > div {
+    font-size: 12px;
+  }
+  .filmScrollCue {
+    max-width: 100px;
+  }
+  .filmStatement {
+    padding-block: 40px;
+  }
+  .filmStatementBody {
+    padding: 26px 0 0;
+  }
+  .filmStatementBody h2 {
+    font-size: 26px;
+  }
+  .filmStatementOrbit {
+    left: auto;
+    right: 0;
+    top: auto;
+  }
+  .filmSectionLabel {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .filmStatementMeta > span:last-child {
+    font-size: 12px;
+  }
+  .filmDiscovery {
+    padding-block: 48px 43px;
+  }
+  .cinematicHome .filmSectionHeading h2,
+  .cinematicHome .atlasIntro h2,
+  .cinematicHome .scrollStoryHeading h2,
+  .cinematicHome .filmFinale h2,
+  .cinematicHome .cinemaPortalCopy h2 {
+    font-size: 43px;
+  }
+  .filmSectionHeading {
+    gap: 19px;
+  }
+  .filmHeadingAside p {
+    font-size: 13px;
+  }
+  .filmDiscoveryTopline {
+    margin-top: 0;
+  }
+  .filmGalleryItem,
+  .filmSkeleton {
+    flex-basis: 81%;
+  }
+  .filmInstitutionGallery {
+    gap: 15px;
+  }
+  .demoCaption {
+    font-size: 12px;
+  }
+  .filmMarqueeTrack {
+    font-size: 37px;
+  }
+  .filmMarquee {
+    padding-block: 20px;
+  }
+  .filmCourses {
+    padding-block: 50px;
+  }
+  .filmCourseFeature {
+    min-height: 390px;
+  }
+  .filmCourseRow h3 {
+    font-size: 19px;
+  }
+  .atlasSection {
+    padding-block: 50px;
+  }
+  .atlasIntro,
+  .atlasExperience {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .atlasIntro h2 {
+    margin-top: 5px;
+  }
+  .atlasIntro > p {
+    font-size: 13px;
+    margin: 5px 0 0;
+  }
+  .atlasExperience {
+    margin-top: 22px;
+  }
+  .atlasViewport {
+    height: 335px;
+  }
+  .atlasScrollLayer {
+    scale: 0.85;
+  }
+  .atlasDetail {
+    min-height: 235px;
+    padding-top: 23px;
+  }
+  .atlasDetail h3 {
+    font-size: 26px;
+  }
+  .atlasTabs button {
+    padding: 15px;
+    font-size: 13px;
+  }
+  .filmFinale {
+    padding-top: 0;
+    margin-block: 50px;
+  }
+  .filmJourneyCopy h2 {
+    font-size: 33px;
+  }
+  .scrollStory {
+    padding-block: 50px;
+  }
+  .scrollStoryChapter h3 {
+    font-size: 27px;
+  }
+  .pageHero.routeCinemaHero {
+    padding-top: 106px;
+  }
+  .routeCinemaHero .routeCinemaCopy h1 {
+    font-size: 45px;
+  }
+  .miaChat {
+    right: 12px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+  .miaLauncher {
+    min-height: 43px;
+    padding: 11px 13px;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .miaLauncher > svg {
+    width: 18px;
+  }
+  .miaPanel {
+    width: min(390px, calc(100vw - 24px));
+    height: min(620px, calc(100dvh - 85px));
+    margin-bottom: 9px;
+    border-radius: 9px;
+  }
+  .miaHeader {
+    padding: 16px;
+  }
+  .miaForm input {
+    font-size: 16px;
+  }
+  .miaMessages {
+    padding: 17px;
+  }
+  .miaSuggestions button {
+    font-size: 12px;
+  }
+  .cinemaMotionControl {
+    bottom: 17px;
+    left: 12px;
+    padding: 10px;
+    font-size: 12px;
+  }
+  .cinemaMotionControl > span {
+    max-width: 64px;
+  }
+  .missingPage {
+    padding-top: 113px;
+    padding-bottom: 110px;
+  }
+  .missingContent > .filmSectionLabel {
+    font-size: 12px;
+  }
+  .missingContent h1 {
+    font-size: 45px;
+  }
+  .missingContent > p {
+    font-size: 13px;
+  }
+  .missingActions {
+    flex-direction: column;
+    gap: 13px;
+  }
+  .missingSearch {
+    gap: 8px;
+    padding-inline: 0;
+  }
+  .missingSearch input {
+    font-size: 13px;
+  }
+}
+@media (max-width: 360px) {
+  .filmControls {
+    gap: 3px;
+  }
+  .filmArrow,
+  .filmPause {
+    width: 24px;
+    height: 24px;
+  }
+  .filmSceneDots button {
+    width: 8px;
+  }
+  .filmScrollCue {
+    max-width: 85px;
+  }
+  .filmHeroDestinations b {
+    font-size: 12px;
+  }
+  .cinematicHome .filmTitle {
+    font-size: 52px;
+  }
+  .miaLauncher {
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .pageTransition {
+    opacity: 1;
+  }
+  .atlasAutoRotate {
+    animation: none;
+  }
+}
+html[data-cinema-quality="lite"] .atlasAutoRotate {
+  animation: none;
+}
+/* Clean layout pass: remove decorative microcopy so the photography,
+   primary headlines and actions carry the visual hierarchy. */
+.cinematicHome .filmHeroTop,
+.cinematicHome .filmEyebrow,
+.cinematicHome .filmHeroFooter,
+.cinematicHome .filmStatementMeta,
+.cinematicHome .filmSectionLabel,
+.cinematicHome .filmHeroDestinations a > span,
+.cinematicHome .filmFeatureTag,
+.cinematicHome .filmCourseFeature > div > span:first-child,
+.cinematicHome .atlasCoordinates,
+.cinematicHome .scrollStoryHint,
+.cinematicHome .filmJourneyHeader,
+.cinematicHome .filmJourneyCaption > span,
+.cinematicHome .cinemaPortalCopy > .filmSectionLabel,
+.routeCinemaHero .routeCinemaCaption {
+  display: none !important;
+}
+.cinematicHome .filmScrollCue > div {
+  display: none;
+}
+.cinematicHome .filmScrollCue {
+  max-width: none;
+}
+.cinematicHome .filmHero {
+  padding-bottom: 0;
+}
+.cinematicHome .filmHeroInner {
+  min-height: 100svh;
+}
+.cinematicHome .filmStatementBody {
+  padding-top: 0;
+}
+.cinematicHome .filmFinale {
+  padding-bottom: 48px;
+}
+/* Readability pass: keep display titles untouched, but give body copy and controls
+   a little more visual weight and size across the editorial experience. */
+body {
+  font-size: 18px;
+}
+.filmDescription {
+  font-size: 14px;
+}
+.filmHeroActions .filmPrimary {
+  font-size: 14px;
+}
+.filmSecondary {
+  font-size: 14px;
+}
+.filmHeroDestinations p {
+  font-size: 14px;
+}
+.filmHeroDestinations b {
+  font-size: 14px;
+}
+.filmStatementBody p {
+  font-size: 13px;
+}
+.demoCaption {
+  font-size: 14px;
+}
+.filmCourseFeature p,
+.filmCourseRow small,
+.scrollStoryChapter p,
+.cinemaPortalCopy p,
+.nextChapter p,
+.filmJourneyCopy p,
+.filmJourneyCaption p,
+.filmFinale p {
+  font-size: 14px;
+}
+.filmCourseRow > div > span {
+  font-size: 13px;
+}
+.filmTextLink {
+  font-size: 14px;
+}
+.atlasTabs button {
+  font-size: 13px;
+}
+.miaLauncher {
+  font-size: 13px;
+}
+.miaSuggestions button {
+  font-size: 13px;
+}
+.miaForm input {
+  font-size: 14px;
+}
+.missingActions .button {
+  font-size: 13px;
+}
+.missingSearch input {
+  font-size: 13px;
+}
+/* Authentication pages now use the same dark editorial palette as the rest of
+   the site instead of the older green treatment. */
+/* Keep the two auth actions in the navigation inside the same site palette. */
+@media (max-width: 899px) {
+  .filmDescription {
+    font-size: 13px;
+  }
+  .filmHeroActions .filmPrimary,
+  .filmSecondary {
+    font-size: 13px;
+  }
+  .filmStatementBody p,
+  .filmCourseFeature p,
+  .filmCourseRow small,
+  .scrollStoryChapter p,
+  .cinemaPortalCopy p,
+  .nextChapter p,
+  .filmJourneyCopy p,
+  .filmJourneyCaption p,
+  .filmFinale p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+  }
+  .filmDescription {
+    font-size: 13px;
+  }
+}

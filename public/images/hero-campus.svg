@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-label="Campus universitário">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#183f31"/><stop offset="1" stop-color="#071f17"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#91cbb0"/><stop offset="1" stop-color="#376e58"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6dfa0"/><stop offset="1" stop-color="#c69d4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1800" height="1000" fill="url(#sky)"/>
+  <circle cx="1450" cy="160" r="210" fill="#f1d48b" opacity=".12"/>
+  <circle cx="1510" cy="180" r="105" fill="#f1d48b" opacity=".08"/>
+  <path d="M0 740 C300 640 470 710 720 650 C1020 578 1210 650 1800 520 V1000 H0Z" fill="#0b2b20"/>
+  <path d="M0 820 C350 730 560 810 820 730 C1110 645 1380 700 1800 620 V1000 H0Z" fill="#092319"/>
+  <g opacity=".95">
+    <path d="M260 720 L260 430 L650 330 L650 700Z" fill="#d8dfd8"/>
+    <path d="M650 330 L860 420 L860 700 L650 700Z" fill="#b7c9bf"/>
+    <path d="M260 430 L650 330 L860 420 L470 535Z" fill="#eef2ec"/>
+    <g fill="url(#glass)">
+      <path d="M300 465 L365 448 L365 680 L300 680Z"/><path d="M390 442 L455 425 L455 665 L390 665Z"/>
+      <path d="M480 419 L545 402 L545 650 L480 650Z"/><path d="M570 396 L635 379 L635 635 L570 635Z"/>
+      <path d="M675 400 L730 424 L730 640 L675 640Z"/><path d="M755 434 L810 457 L810 645 L755 645Z"/>
+    </g>
+    <path d="M190 745 L480 545 L930 700 L720 790Z" fill="#173f30"/>
+    <path d="M930 700 L1120 615 L1550 700 L1370 790Z" fill="#102f24"/>
+    <path d="M1040 680 L1040 395 L1390 335 L1390 705Z" fill="#d6ddd6"/>
+    <path d="M1390 335 L1580 425 L1580 700 L1390 705Z" fill="#b7c8be"/>
+    <path d="M1040 395 L1390 335 L1580 425 L1230 500Z" fill="#edf1eb"/>
+    <g fill="url(#glass)">
+      <path d="M1080 425 L1140 415 L1140 665 L1080 670Z"/><path d="M1165 410 L1225 400 L1225 660 L1165 665Z"/>
+      <path d="M1250 396 L1310 386 L1310 660 L1250 660Z"/><path d="M1335 382 L1380 375 L1380 665 L1335 660Z"/>
+      <path d="M1425 385 L1480 412 L1480 665 L1425 665Z"/><path d="M1500 420 L1545 442 L1545 665 L1500 665Z"/>
+    </g>
+  </g>
+  <g fill="#e7c979" opacity=".8">
+    <circle cx="150" cy="760" r="7"/><circle cx="177" cy="744" r="5"/><circle cx="1640" cy="770" r="7"/><circle cx="1675" cy="750" r="5"/>
+  </g>
+  <path d="M0 865 C300 825 500 890 760 840 C1050 785 1320 840 1800 790" fill="none" stroke="url(#gold)" stroke-width="3" opacity=".45"/>
+</svg>

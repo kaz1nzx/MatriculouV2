@@ -1,0 +1,785 @@
+.routeCinemaHero {
+  padding: 42px max(56px, calc((100% - 1200px) / 2)) 0;
+  isolation: isolate;
+}
+.routeCinemaLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 300px;
+}
+.routeCinemaCopy {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0 35px;
+}
+.routeCinemaHero .routeCinemaCopy h1 {
+  max-width: 700px;
+  font-size: clamp(36px, 4.3vw, 59px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  margin: 20px 0;
+}
+.routeCinemaHero .routeCinemaCopy p {
+  max-width: 600px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #fffdf8b3;
+}
+.routeCinemaVisual {
+  align-self: stretch;
+  position: relative;
+  min-height: 290px;
+  border-radius: 90px 16px 0 0;
+  overflow: hidden;
+  border: 1px solid #fffdf826;
+  border-bottom: 0;
+}
+.routeCinemaPicture {
+  position: absolute;
+  inset: -8% -3%;
+}
+.routeCinemaPicture img {
+  object-fit: cover;
+  filter: saturate(0.6);
+}
+.routeCinemaPicture > span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #143e2fea, transparent 75%);
+}
+.routeCinemaCaption {
+  position: absolute;
+  bottom: 32px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gold);
+}
+.routeCinemaNumber {
+  position: absolute;
+  right: 20px;
+  bottom: 14px;
+  font:
+    500 94px/1 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -7px;
+  color: #fffdf818;
+}
+.pageHero > .routeCinemaOrbit {
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  top: -120px;
+  right: 20%;
+  pointer-events: none;
+  z-index: 0;
+}
+.routeCinemaOrbit i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #f1d48b12;
+  border-radius: 50%;
+}
+.routeCinemaOrbit i:last-child {
+  inset: 45px;
+  border-style: dashed;
+}
+/* A reading journey: the imagery stays beside the story, never over the text. */
+.scrollStory {
+  width: calc(100% - 112px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 85px 0 100px;
+}
+.scrollStoryHeading {
+  position: relative;
+  margin-bottom: 48px;
+}
+.scrollStoryHeading h2 {
+  font:
+    600 clamp(33px, 3.7vw, 50px) / 1.14 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.055em;
+  color: var(--ink);
+  margin: 23px 0;
+}
+.scrollStoryHeading h2 em {
+  font-style: normal;
+  color: var(--green2);
+}
+.scrollStoryHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.scrollStoryHint svg {
+  color: var(--coral);
+}
+.scrollStoryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+}
+.scrollStoryVisual {
+  position: sticky;
+  top: 130px;
+  height: min(570px, 72svh);
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 20px 100px 20px 20px;
+  background: var(--green);
+  isolation: isolate;
+}
+.scrollStoryImages {
+  position: absolute;
+  inset: -4% 0;
+  z-index: -3;
+}
+.scrollStoryImage {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition:
+    opacity 0.85s ease,
+    transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform: scale(1.09);
+}
+.scrollStoryImage.isActive {
+  opacity: 1;
+  transform: scale(1);
+}
+.scrollStoryImage img {
+  object-fit: cover;
+  filter: saturate(0.65);
+}
+.scrollStoryShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #0d2d21ef, transparent 75%),
+    linear-gradient(180deg, #0d2d2166, transparent 30%);
+  z-index: -2;
+}
+.scrollStoryViewfinder {
+  position: absolute;
+  inset: 19px;
+  border: 1px solid #fffdf821;
+  border-radius: 5px 75px 5px 5px;
+  pointer-events: none;
+}
+.scrollStoryVisualTop {
+  position: absolute;
+  top: 39px;
+  left: 36px;
+  right: 65px;
+  font-size: 12px;
+  letter-spacing: 1.7px;
+  color: #fffdf8b0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.scrollStoryVisualTop i {
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.scrollStoryVisualWord {
+  position: absolute;
+  bottom: 135px;
+  left: 37px;
+  right: 33px;
+  font:
+    500 clamp(27px, 3vw, 44px) / 1.05 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.045em;
+  color: var(--paper);
+  animation: cinemaCaptionIn 0.65s both;
+}
+.scrollStoryVisualBottom {
+  position: absolute;
+  bottom: 38px;
+  left: 37px;
+  right: 37px;
+  padding-top: 22px;
+  border-top: 1px solid #fffdf832;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.scrollStoryVisualBottom > span {
+  font-size: 12px;
+  letter-spacing: 1.1px;
+  color: #fffdf889;
+  text-align: right;
+}
+.scrollStoryVisualBottom b {
+  display: block;
+  font:
+    500 29px/1 "Space Grotesk",
+    sans-serif;
+  color: var(--gold);
+  margin-top: 9px;
+}
+.scrollStoryVisualBottom small {
+  font-size: 14px;
+  color: #fffdf881;
+}
+.scrollStoryMeter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #fffdf81a;
+}
+.scrollStoryMeter > i {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transform-origin: top;
+}
+.scrollStoryChapter {
+  position: relative;
+  padding: 36px 0 45px;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scrollStoryChapter:last-child {
+  padding-bottom: 20px;
+}
+.scrollStoryRule {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+}
+.scrollStoryRule > i {
+  display: block;
+  background: var(--green2);
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+}
+.scrollStoryIndex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font:
+    500 12px "Space Grotesk",
+    sans-serif;
+  margin-bottom: 17px;
+  transition: color 0.4s;
+}
+.scrollStoryIndex svg {
+  color: var(--coral);
+}
+.scrollStoryChapter h3 {
+  font:
+    600 clamp(25px, 2.5vw, 34px) / 1.17 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.scrollStoryChapter p {
+  max-width: 445px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+  margin: 0 0 15px;
+}
+.scrollStoryChapter .filmTextLink {
+  align-self: flex-start;
+  font-size: 14px;
+}
+.scrollStoryChapter.isActive .scrollStoryIndex {
+  color: var(--green);
+}
+.scrollStory.isMotion .scrollStoryChapter h3 {
+  transition:
+    color 0.5s,
+    translate 0.6s;
+}
+.scrollStory.isMotion .scrollStoryChapter.isActive h3 {
+  color: var(--green2);
+  translate: 5px 0;
+}
+@keyframes cinemaCaptionIn {
+  from {
+    opacity: 0;
+    translate: 0 15px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+/* A frame opens into a horizon as the reader approaches the closing chapter. */
+.cinemaPortal {
+  position: relative;
+  background: var(--bg);
+}
+.cinemaPortalViewport {
+  position: relative;
+  height: 720px;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.cinemaPortalFrame {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: var(--green);
+  overflow: hidden;
+}
+.cinemaPortalPhoto {
+  position: absolute;
+  inset: -5% 0;
+}
+.cinemaPortalPhoto img {
+  object-fit: cover;
+  object-position: center 43%;
+  filter: saturate(0.55);
+}
+.cinemaPortalShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #09251eee, #0d2d2199 50%, #0d2d2166);
+}
+.cinemaPortalOutline {
+  position: absolute;
+  top: 9%;
+  left: -2%;
+  font:
+    600 clamp(90px, 14vw, 225px) / 1 "Space Grotesk",
+    sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1px #fffdf828;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+.cinemaPortalCopy {
+  text-align: center;
+  max-width: 850px;
+  padding: 50px 30px 65px;
+  color: var(--paper);
+}
+.cinemaPortalCopy .filmSectionLabel {
+  color: var(--gold);
+  font-size: 12px;
+}
+.cinemaPortalCopy .filmSectionLabel i {
+  background: var(--gold);
+}
+.cinemaPortalCopy h2 {
+  font:
+    600 clamp(42px, 6.5vw, 91px) / 1.05 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.065em;
+  color: var(--paper);
+  margin: 27px 0 25px;
+}
+.cinemaPortalCopy h2 em {
+  color: var(--gold);
+  font-style: normal;
+}
+.cinemaPortalCopy p {
+  color: #fffdf8b3;
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+.cinemaPortalCopy .filmTextLink {
+  color: var(--paper);
+  font-size: 13px;
+  border-bottom: 1px solid #f1d48b80;
+  padding-bottom: 14px;
+}
+.cinemaPortalBottom {
+  position: absolute;
+  left: max(56px, calc((100% - 1200px) / 2));
+  right: max(56px, calc((100% - 1200px) / 2));
+  bottom: 35px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  color: var(--gold);
+}
+.cinemaPortalBottom > span {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #fffdf884;
+}
+.cinemaPortalProgress {
+  height: 1px;
+  flex: 1;
+  background: #fffdf82a;
+}
+.cinemaPortalProgress i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transform-origin: left;
+}
+@media (min-width: 900px) and (min-height: 740px) {
+  .cinemaPortal.isMotion {
+    height: 190svh;
+  }
+  .cinemaPortal.isMotion .cinemaPortalViewport {
+    position: sticky;
+    top: 80px;
+    height: calc(100svh - 80px);
+  }
+}
+/* Every public route has a considered ending and a clear next destination. */
+.nextChapter {
+  position: relative;
+  width: calc(100% - 112px);
+  max-width: 1200px;
+  margin: 20px auto 90px;
+  padding: 75px 55px 45px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.nextChapterLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--green2), var(--gold));
+  transform-origin: left;
+}
+.nextChapter h2 {
+  font:
+    600 clamp(30px, 3.4vw, 47px) / 1.12 "Space Grotesk",
+    sans-serif;
+  color: var(--ink);
+  letter-spacing: -0.055em;
+  margin: 20px 0;
+  max-width: 670px;
+}
+.nextChapter p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 490px;
+  line-height: 1.8;
+  margin-bottom: 27px;
+}
+.nextChapter .button {
+  display: inline-flex;
+  gap: 24px;
+  font-size: 14px;
+  padding: 15px 20px;
+}
+.nextChapterOrbit {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  right: 0;
+  top: 70px;
+  z-index: -1;
+  color: var(--coral);
+  display: grid;
+  place-items: center;
+}
+.nextChapterOrbit > i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+.nextChapterOrbit > i:nth-child(2) {
+  inset: 45px;
+  border-style: dashed;
+}
+/* Finishing details extend into catalogs, dialogs, profile and account pages. */
+@keyframes cinemaDialogBackdrop {
+  from {
+    background-color: #18302700;
+  }
+}
+@keyframes cinemaDialogIn {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+    scale: 0.98;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@media (max-width: 1100px) {
+  .routeCinemaLayout {
+    gap: 30px;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  .routeCinemaCaption {
+    font-size: 13px;
+    left: 20px;
+  }
+  .routeCinemaNumber {
+    font-size: 74px;
+  }
+  .scrollStoryGrid {
+    gap: 50px;
+  }
+  .scrollStoryVisualWord {
+    font-size: 33px;
+  }
+  .nextChapterOrbit {
+    opacity: 0.6;
+    right: -80px;
+  }
+}
+@media (max-width: 799px) {
+  .routeCinemaHero {
+    padding: 30px 30px 0;
+  }
+  .routeCinemaLayout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+  }
+  .routeCinemaCopy {
+    padding: 20px 0 26px;
+  }
+  .routeCinemaHero .routeCinemaCopy h1 {
+    font-size: clamp(34px, 6.4vw, 49px);
+  }
+  .routeCinemaHero .routeCinemaCopy p {
+    font-size: 13px;
+  }
+  .routeCinemaVisual {
+    min-height: 160px;
+    border-radius: 60px 12px 0 0;
+  }
+  .routeCinemaCaption {
+    bottom: 23px;
+    left: 25px;
+    font-size: 14px;
+  }
+  .scrollStory {
+    width: calc(100% - 60px);
+    padding: 60px 0;
+  }
+  .scrollStoryGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .scrollStoryVisual {
+    position: relative;
+    top: auto;
+    height: 380px;
+    min-height: 0;
+    border-radius: 18px 75px 18px 18px;
+  }
+  .scrollStoryHeading {
+    margin-bottom: 30px;
+  }
+  .scrollStoryHeading h2 {
+    font-size: 38px;
+  }
+  .scrollStoryChapter {
+    min-height: 0;
+    padding: 28px 0 32px;
+  }
+  .scrollStoryChapter h3 {
+    font-size: 29px;
+  }
+  .scrollStoryChapter p {
+    max-width: none;
+    font-size: 13px;
+  }
+  .scrollStoryVisualTop {
+    font-size: 12px;
+  }
+  .cinemaPortalViewport {
+    height: 590px;
+    min-height: 0;
+  }
+  .cinemaPortalCopy h2 {
+    font-size: 61px;
+  }
+  .cinemaPortalCopy p {
+    max-width: 400px;
+    margin: 0 auto 24px;
+    line-height: 1.8;
+    font-size: 13px;
+  }
+  .cinemaPortalBottom {
+    left: 30px;
+    right: 30px;
+  }
+  .nextChapter {
+    width: calc(100% - 60px);
+    padding: 52px 15px 30px;
+    margin-bottom: 60px;
+  }
+  .nextChapter h2 {
+    font-size: 38px;
+  }
+  .nextChapterOrbit {
+    width: 240px;
+    height: 240px;
+    top: 150px;
+    right: -100px;
+    opacity: 0.3;
+  }
+}
+@media (max-width: 480px) {
+  .routeCinemaHero {
+    padding: 20px 22px 0;
+  }
+  .routeCinemaHero .routeCinemaCopy h1 {
+    font-size: 37px;
+  }
+  .routeCinemaHero .routeCinemaCopy p {
+    font-size: 14px;
+  }
+  .routeCinemaVisual {
+    min-height: 145px;
+  }
+  .scrollStory {
+    width: calc(100% - 40px);
+    padding: 50px 0;
+  }
+  .scrollStoryHeading h2 {
+    font-size: 31px;
+  }
+  .scrollStoryHint {
+    font-size: 12px;
+  }
+  .scrollStoryVisual {
+    height: 350px;
+  }
+  .scrollStoryVisualWord {
+    font-size: 31px;
+    left: 28px;
+    bottom: 130px;
+  }
+  .scrollStoryVisualTop {
+    left: 28px;
+    top: 33px;
+    font-size: 12px;
+    right: 50px;
+    gap: 8px;
+  }
+  .scrollStoryVisualBottom {
+    left: 28px;
+    right: 28px;
+    bottom: 32px;
+  }
+  .scrollStoryChapter h3 {
+    font-size: 27px;
+  }
+  .scrollStoryChapter p {
+    font-size: 14px;
+  }
+  .scrollStoryChapter .filmTextLink {
+    font-size: 13px;
+  }
+  .cinemaPortalViewport {
+    height: 550px;
+  }
+  .cinemaPortalCopy {
+    padding-inline: 22px;
+  }
+  .cinemaPortalCopy h2 {
+    font-size: clamp(39px, 10.5vw, 50px);
+  }
+  .cinemaPortalCopy p {
+    font-size: 14px;
+  }
+  .cinemaPortalCopy .filmTextLink {
+    font-size: 13px;
+    gap: 12px;
+  }
+  .cinemaPortalCopy .filmSectionLabel {
+    font-size: 12px;
+  }
+  .cinemaPortalBottom {
+    left: 22px;
+    right: 22px;
+    gap: 18px;
+  }
+  .cinemaPortalBottom > span {
+    font-size: 12px;
+  }
+  .nextChapter {
+    width: calc(100% - 40px);
+    padding-inline: 3px;
+  }
+  .nextChapter h2 {
+    font-size: 32px;
+  }
+  .nextChapter p {
+    font-size: 14px;
+    padding-right: 15px;
+  }
+  .nextChapter .filmSectionLabel {
+    font-size: 12px;
+  }
+}
+@media (max-height: 699px) {
+  .scrollStoryVisual {
+    position: relative;
+    top: auto;
+    height: 450px;
+  }
+}
+html[data-cinema="off"] .scrollStoryVisual,
+html[data-cinema-quality="lite"] .scrollStoryVisual {
+  position: relative;
+  top: auto;
+}
+html[data-cinema="off"] .scrollStoryChapter h3 {
+  translate: none;
+}
+html[data-cinema="off"] .cinemaPortalFrame {
+  clip-path: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scrollStoryVisual {
+    position: relative;
+    top: auto;
+  }
+  .scrollStoryVisualWord {
+    animation: none;
+  }
+}
+/* Scroll reveal (see CinemaProvider): a translate-only rise, so text is never faded or unreadable. Uses `translate`, not `transform`, so it never
+   fights the card tilt; without motion every element is simply visible. */
+html[data-cinema="on"] [data-reveal="pending"] {
+  translate: 0 45px;
+}
+html[data-cinema="on"][data-cinema-quality="lite"] [data-reveal="pending"] {
+  translate: 0 18px;
+}
+html[data-cinema="on"] [data-reveal="in"] {
+  translate: 0 0;
+  transition: translate 0.95s cubic-bezier(0.25, 1, 0.5, 1)
+    var(--reveal-delay, 0s);
+}

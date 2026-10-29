@@ -1,0 +1,851 @@
+/* Login, cadastro e área do estudante. */
+.authPage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 100dvh;
+}
+
+.authPage.single {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+.authArt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--nav-h) + 32px) clamp(28px, 5vw, 72px) 48px;
+  overflow: hidden;
+  background:
+    linear-gradient(0deg, #10191ff2 10%, #10191f99 60%, #10191fcc),
+    url("/images/cinema/students.jpg") center / cover;
+}
+
+.authArt > img {
+  width: 150px;
+}
+
+.authArtTitle {
+  max-width: 560px;
+  font: 600 clamp(38px, 4.4vw, 60px) / 0.98 var(--display);
+  text-transform: uppercase;
+}
+
+.authArt ul {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  color: var(--text-muted);
+}
+
+.authArt li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.authArt li .icon {
+  color: var(--ember-strong);
+}
+
+.authPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(520px, 100%);
+  margin-inline: auto;
+  padding: calc(var(--nav-h) + 32px) var(--gutter) 48px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin-bottom: 28px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.backLink:hover {
+  color: var(--ember-strong);
+}
+
+.authForm {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.authDone {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.authDone p {
+  color: var(--text-muted);
+}
+
+.switchAuth {
+  margin-top: 22px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.switchAuth a {
+  color: var(--ember-strong);
+  font-weight: 700;
+}
+
+.strength {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.strengthBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.strengthBar i {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--surface-3);
+  transition: background-color var(--dur) var(--ease);
+}
+
+.strengthBar.s1 i:nth-child(-n + 1) {
+  background: var(--danger);
+}
+
+.strengthBar.s2 i:nth-child(-n + 2) {
+  background: var(--warning);
+}
+
+.strengthBar.s3 i:nth-child(-n + 3),
+.strengthBar.s4 i {
+  background: var(--success);
+}
+
+.strength ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.strength li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.strength li.ok {
+  color: var(--success);
+}
+
+/* Perfil */
+.accountPage {
+  padding-top: calc(var(--nav-h) + 32px);
+}
+
+.lockedPage {
+  padding-top: calc(var(--nav-h) + 80px);
+}
+
+.accountLayout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.accountSide {
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+  display: grid;
+  gap: 16px;
+}
+
+.accountCard {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.accountCard h2 {
+  font-size: 19px;
+}
+
+.identity {
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.identity .avatar {
+  margin-bottom: 8px;
+  border: 3px solid var(--ember);
+}
+
+.identity small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--text-soft);
+  font-size: 13px;
+  text-overflow: ellipsis;
+}
+
+.sideNav {
+  display: grid;
+  gap: 2px;
+}
+
+.sideNav > span {
+  padding: 8px 12px 6px;
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sideNav button,
+.sideNav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.sideNav button > span,
+.sideNav a > span {
+  flex: 1;
+}
+
+.sideNav button:hover,
+.sideNav a:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.sideNav [aria-current="page"] {
+  background: var(--surface-2);
+  color: var(--text);
+  box-shadow: inset 3px 0 0 var(--ember);
+}
+
+.sideNav [aria-current="page"] .icon {
+  color: var(--ember-strong);
+}
+
+.accountMain {
+  min-width: 0;
+  outline: none;
+}
+
+.accountSection {
+  display: grid;
+  gap: 20px;
+}
+
+.sectionHead,
+.welcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sectionHead h1,
+.welcome h1 {
+  margin: 0 0 6px;
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.welcome h1 {
+  margin-top: 10px;
+}
+
+.sectionHead p,
+.welcome p {
+  max-width: 640px;
+  color: var(--text-muted);
+}
+
+.statCards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.statCards > * {
+  display: grid;
+  gap: 4px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  text-align: left;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.statCards > *:hover {
+  border-color: var(--ember);
+}
+
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.statValue {
+  font: 600 40px/1 var(--display);
+}
+
+.alertText {
+  color: var(--ember-strong);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.overviewGrid .span2 {
+  grid-column: 1 / -1;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardHead h2 {
+  font-size: 18px;
+}
+
+.completion {
+  font: 600 28px/1 var(--display);
+  color: var(--ember-strong);
+}
+
+.miniList {
+  display: grid;
+}
+
+.miniList.card {
+  padding: 6px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.miniList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.miniList li:last-child {
+  border-bottom: 0;
+}
+
+.miniList li > span {
+  display: grid;
+  min-width: 0;
+}
+
+.miniList small {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.suggestGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.suggestGrid a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.suggestGrid a:hover {
+  border-color: var(--ember);
+}
+
+.suggestGrid img {
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  background: var(--text);
+}
+
+.suggestGrid span {
+  display: grid;
+}
+
+.suggestGrid small {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.favoriteGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.favoriteItem {
+  display: grid;
+  gap: 12px;
+  overflow: hidden;
+  padding-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.favoriteItem img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.favoriteItem > div {
+  padding-inline: 14px;
+}
+
+.favoriteItem > div:first-of-type {
+  display: grid;
+  gap: 4px;
+}
+
+.favoriteItem small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-soft);
+}
+
+.applicationList {
+  display: grid;
+  gap: 14px;
+}
+
+.application > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.application > header > div {
+  display: grid;
+}
+
+.application > header small {
+  color: var(--text-soft);
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.stepper li {
+  display: grid;
+  gap: 8px;
+}
+
+.stepper li span {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--surface-3);
+}
+
+.stepper li.done {
+  color: var(--text);
+}
+
+.stepper li.done span {
+  background: var(--ember);
+}
+
+.stepper li[aria-current="step"] {
+  font-weight: 700;
+}
+
+.thread {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--night-deep);
+}
+
+.threadLog {
+  display: grid;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.threadLog li {
+  display: grid;
+  gap: 4px;
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+
+.threadLog li.mine {
+  justify-self: end;
+  border-bottom-right-radius: 4px;
+  background: #f1846529;
+}
+
+.threadLog li.theirs {
+  border-bottom-left-radius: 4px;
+}
+
+.threadLog span {
+  color: var(--ember-strong);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.threadLog p {
+  white-space: pre-line;
+}
+
+.threadLog time {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.threadForm {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.threadForm textarea {
+  min-height: 48px;
+}
+
+.threadForm .btn {
+  min-width: 48px;
+  padding: 0;
+}
+
+.docList {
+  display: grid;
+}
+
+.docList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.docList li > div {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.docList a {
+  overflow: hidden;
+  color: var(--ember-strong);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.docList small {
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.docIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--ember-strong);
+}
+
+.dropzone {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 28px 16px;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.dropzone:hover,
+.dropzone.isDragging,
+.dropzone:focus-within {
+  border-color: var(--ember);
+  background: var(--ember-soft);
+}
+
+.dropzone .icon {
+  color: var(--ember-strong);
+}
+
+.dropzone b {
+  color: var(--text);
+}
+
+.dropzone span {
+  font-size: 13px;
+}
+
+.dropzone input,
+.fileButton input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fileButton {
+  position: relative;
+  overflow: hidden;
+}
+
+.fileButton:focus-within {
+  outline: 2px solid var(--ember-strong);
+  outline-offset: 3px;
+}
+
+.avatarRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatarRow > div {
+  display: grid;
+  gap: 4px;
+}
+
+.avatarRow small {
+  color: var(--text-soft);
+}
+
+.avatarRow .inlineActions {
+  margin-top: 8px;
+}
+
+.settingsList {
+  gap: 0;
+  padding-block: 6px;
+}
+
+.settingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.settingRow:last-child {
+  border-bottom: 0;
+}
+
+.settingRow span {
+  display: grid;
+  gap: 2px;
+}
+
+.settingRow small {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.actionList {
+  display: grid;
+  gap: 10px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: left;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.actionItem:hover {
+  border-color: var(--ember);
+}
+
+.actionItem > .icon {
+  color: var(--ember-strong);
+}
+
+.actionItem span {
+  display: grid;
+}
+
+.actionItem small {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.rowCard,
+.dangerZone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dangerZone {
+  border-color: #ff8f804d;
+}
+
+@media (max-width: 1000px) {
+  .accountLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .accountSide {
+    position: static;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .identity {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .identity .avatar {
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .sideNav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .sideNav > span {
+    display: none;
+  }
+
+  .sideNav button,
+  .sideNav a {
+    flex: none;
+    border: 1px solid var(--line);
+  }
+
+  .sideNav [aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--ember);
+  }
+
+  .statCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .authPage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .authArt {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .overviewGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stepper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .threadLog li {
+    max-width: 92%;
+  }
+
+  .strength ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
